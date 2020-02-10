@@ -34,7 +34,7 @@ git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/theme
 ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 ```
 
-- Setup Zsh to be called automatically by Bash. Edit the ~/.bashrc file and paste the lines below at the bottom of the file:
+- Setup Zsh to be called automatically by Bash. Edit the ~/.bashrc file and append to the file:
 
 ```
 cd ~
@@ -78,7 +78,7 @@ function homestead() {
 
 - Download the Fira Code fonts at https://github.com/tonsky/FiraCode. Unzip and double click the TTF to install.
 
-- Open the Hyper config file (CTRL+',') and change the default shell to be bash and font family (just add "Fira Code" before Menlo):
+- Open the Hyper config file (CTRL+',') and change the default shell to be bash and the font family (just add "Fira Code" before Menlo):
 
 ```
 shell: 'C:\\Windows\\System32\\bash.exe'
@@ -167,7 +167,16 @@ end
 ssh-keygen -o
 ```
 
-- Setup the local folder at the Homestead.yaml file to be /mnt/c/Users/[yourusername]/Documents/code no Homestead.yaml
+- Setup the local folder at the Homestead.yaml file to be /mnt/c/Users/[yourusername]/Documents/code
+
+```
+folders:
+    - map: /mnt/c/Users/[yourusername]/Documents/code
+      to: /home/vagrant/code
+```
+
+
+- Start the Homestead VM
 
 ```
 homestead up
@@ -175,13 +184,13 @@ homestead up
 
 # Warning message suppression
 
-- In order to supress a "Insecure world writable dir /home/mwguerra/.config/composer/vendor/bin" warning:
+- In order to supress the "Insecure world writable dir /home/[yourusername]/.config/composer/vendor/bin" warning:
 
 ```
 sudo chmod 755 ~/.config -R
 ```
 
-- In order to supress a "Insecure world writable dir /mnt/c" warning, create the /etc/wsl.conf file:
+- In order to supress the "Insecure world writable dir /mnt/c" warning, create the /etc/wsl.conf file:
 
 ```
 sudo nano /etc/wsl.conf
