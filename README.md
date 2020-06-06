@@ -140,6 +140,7 @@ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/source
 sudo apt update && sudo apt install --no-install-recommends yarn
 ```
 >In case of any problem have a look at this: https://github.com/yarnpkg/yarn/issues/4453#issuecomment-451711909
+>and check if you have WSL2: https://docs.microsoft.com/en-us/windows/wsl/install-win10
 
 - Vagrant and Homestead Installation
 
