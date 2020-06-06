@@ -124,12 +124,13 @@ sudo apt-get install unzip
 composer global require laravel/installer
 ```
 
-- NodeJs 13.x Installation
+- NodeJs 14.x Installation
 
 ```
-curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
+>Check for newer versions: https://github.com/nodesource/distributions
 
 - Yarn Installation (without Node)
 
