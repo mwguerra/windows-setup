@@ -15,6 +15,12 @@ Steps to reproduce the initial setup of a Windows backup development notebook.
 %LOCALAPPDATA%\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs
 ```
 
+# Update Windows
+
+- You must have Windows Pro in order to install the developer tools
+- Make sure you have version 2004 or higher (https://www.microsoft.com/software-download/windows10)
+- Install WSL version 2 (https://docs.microsoft.com/en-us/windows/wsl/install-win10#update-to-wsl-2)
+
 # Hyper Terminal
 
 - Open the bash prompt
