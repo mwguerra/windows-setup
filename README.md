@@ -19,10 +19,12 @@ Steps to reproduce the initial setup of a Windows backup development notebook.
 
 - You must have Windows Pro in order to install the developer tools
 - Make sure you have version 2004 or higher (https://www.microsoft.com/software-download/windows10)
+- At the "Windows Features" window, enable HyperV, Virtual Machine Platform and Windows Subsystem for Linux
 - Install WSL version 2 (https://docs.microsoft.com/en-us/windows/wsl/install-win10#update-to-wsl-2)
 
 # Hyper Terminal
 
+- After installation set each shortcut to always run as administrator (properties->shortcut->advanced->runAsAdministrator)
 - Open the bash prompt
 - Install Zsh and Oh My Zsh
 
