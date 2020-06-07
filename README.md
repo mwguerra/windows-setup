@@ -152,9 +152,9 @@ sudo apt update && sudo apt install --no-install-recommends yarn
 
 ```
 sudo apt update
-curl https://releases.hashicorp.com/vagrant/2.2.7/vagrant_2.2.7_x86_64.deb -O
-sudo dpkg -i vagrant_2.2.7_x86_64.deb
-rm vagrant_2.2.7_x86_64.deb
+curl https://releases.hashicorp.com/vagrant/2.2.9/vagrant_2.2.9_x86_64.deb -O
+sudo dpkg -i vagrant_2.2.9_x86_64.deb
+rm vagrant_2.2.9_x86_64.deb
 vagrant -v
 vagrant box add laravel/homestead
 git clone https://github.com/laravel/homestead.git /mnt/c/Users/[yourusername]/Homestead
