@@ -163,7 +163,7 @@ cd /mnt/c/Users/[yourusername]/Homestead
 bash init.sh
 ```
 
-- Append to the Vagrantfile file in the Homestead folder
+- Append to the Vagrantfile file in the Homestead folder, inside Vagrant.configure
 
 ```
 config.vm.provider "virtualbox" do |v|
