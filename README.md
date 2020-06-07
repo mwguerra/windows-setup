@@ -150,6 +150,7 @@ sudo apt update && sudo apt install --no-install-recommends yarn
 
 - Vagrant and Homestead Installation
 
+>Install Vagrant for Windows 64 bits at the same version you will install on WSL 
 ```
 sudo apt update
 curl https://releases.hashicorp.com/vagrant/2.2.9/vagrant_2.2.9_x86_64.deb -O
