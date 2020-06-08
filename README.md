@@ -182,12 +182,6 @@ config.vm.provider "virtualbox" do |v|
 end
 ```
 
-- Change the Homestead.yaml file in the Homestead folder to configure Hyper-V as the VM provider
-
-```
-provider: hyperv
-```
-
 - Start the homestead machine
 
 ```
