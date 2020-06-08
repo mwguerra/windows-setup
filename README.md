@@ -165,6 +165,14 @@ cd /mnt/c/Users/[yourusername]/Homestead
 bash init.sh
 ```
 
+- Append to the Vagrantfile file in the Homestead folder, inside Vagrant.configure
+
+```
+config.vm.provider "virtualbox" do |v|
+    v.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1"]
+end
+```
+
 - Change the Homestead.yaml file in the Homestead folder to configure Hyper-V as the VM provider
 
 ```
