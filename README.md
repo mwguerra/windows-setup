@@ -120,7 +120,6 @@ sudo -S env RELEASE_UPGRADER_NO_SCREEN=1 do-release-upgrade
 # Install PHP, Composer, NVM, Node, Yarn, Typescript and Vagrant
 
 - PHP Installation
-
 ```
 sudo apt-get update
 sudo apt -y install software-properties-common
@@ -129,10 +128,11 @@ sudo apt-get update
 sudo apt -y install php7.4
 sudo apt-get install -y php7.4-{bcmath,bz2,intl,gd,mbstring,mysql,zip,dom}
 sudo apt-get install -y php7.4-dom
+sudo apt-get install -y php-{redis,xdebug}
+php -m
 ```
 
 - Composer Installation
-
 ```
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 php -r "if (hash_file('sha384', 'composer-setup.php') === 'e0012edf3e80b6978849f5eff0d4b4e4c79ff1609dd1e613307e16318854d24ae64f26d17af3ef0bf7cfb710ca74755a') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
