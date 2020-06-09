@@ -7,6 +7,7 @@ Steps to reproduce the initial setup of a Windows backup development notebook.
 - Install GitHub Desktop
 - Install Oracle Virtual Box
 - Install Hyper Terminal
+- Install Windows Terminal (https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab)
 - Setup Windows developer mode and turn on the Windows Subsystem for Linux (WSL) feature
 - Install Ubuntu from the Windows Store and run/install it
 
@@ -14,6 +15,11 @@ Steps to reproduce the initial setup of a Windows backup development notebook.
 ```
 %LOCALAPPDATA%\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs
 ```
+or, to find it out from the WSL terminal, call explorer.exe from your home directory
+```
+explorer.exe .
+```
+
 
 # Update Windows
 
@@ -84,13 +90,14 @@ SPACESHIP_CHAR_SUFFIX=" "
 # fi
 
 function homestead() {
-    ( cd /mnt/c/Users/marce/Homestead && vagrant $* )
+    ( cd /mnt/c/Users/[yourusername]/Homestead && vagrant $* )
 }
 
 source $ZSH/oh-my-zsh.sh
+source ~/.zsh-nvm/zsh-nvm.plugin.zsh
 
 alias ll='ls -alFh'
-alias code='cd /mnt/c/Users/marce/Documents/code'
+alias dev='cd /mnt/c/Users/[yourusername]/Documents/code' # 'code' was reserved to the VSCode WSL extension
 ```
 
 - Download the Fira Code fonts at https://github.com/tonsky/FiraCode. Unzip and double click the TTF to install.
@@ -135,22 +142,19 @@ sudo mv composer.phar /usr/local/bin/composer
 ```
 
 - Laravel Installer Installation
-
 ```
 sudo apt-get install unzip
 composer global require laravel/installer
 ```
 
-- NodeJs 14.x Installation
-
+- NVM and NodeJS Installation
 ```
-curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-sudo apt-get install -y nodejs
+git clone https://github.com/lukechilds/zsh-nvm.git ~/.zsh-nvm
+source ~/.zsh-nvm/zsh-nvm.plugin.zsh
+nvm install --lts
 ```
->Check for newer versions: https://github.com/nodesource/distributions
 
-- Yarn Installation (without Node)
-
+- Yarn Installation (without Node, since Node is being already handled by NVM)
 ```
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
@@ -160,7 +164,6 @@ sudo apt update && sudo apt install --no-install-recommends yarn
 >and check if you have WSL2: https://docs.microsoft.com/en-us/windows/wsl/install-win10
 
 - Vagrant and Homestead Installation
-
 >Install Vagrant for Windows 64 bits at the same version you will install on WSL 
 ```
 sudo apt update
@@ -175,7 +178,6 @@ bash init.sh
 ```
 
 - Append to the Vagrantfile file in the Homestead folder, inside Vagrant.configure
-
 ```
 config.vm.provider "virtualbox" do |v|
     v.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1"]
@@ -183,19 +185,21 @@ end
 ```
 
 - Start the homestead machine
-
 ```
 homestead up
 ```
 
 - Create the ssh key
-
 ```
 ssh-keygen -o
 ```
 
-- Setup the local folder at the Homestead.yaml file to be /mnt/c/Users/[yourusername]/Documents/code
+- Add zsh-autosuggestions and ssh-agent plugins to the .zshrc file
+```
+plugins=(git ssh-agent zsh-autosuggestions)
+```
 
+- Setup the local folder at the Homestead.yaml file to be /mnt/c/Users/[yourusername]/Documents/code
 ```
 folders:
     - map: /mnt/c/Users/[yourusername]/Documents/code
@@ -204,7 +208,6 @@ folders:
 
 
 - Start the Homestead VM
-
 ```
 homestead up
 ```
@@ -212,13 +215,11 @@ homestead up
 # Warning message suppression
 
 - In order to supress the "Insecure world writable dir /home/[yourusername]/.config/composer/vendor/bin" warning:
-
 ```
 sudo chmod 755 ~/.config -R
 ```
 
 - In order to supress the "Insecure world writable dir /mnt/c" warning, create the /etc/wsl.conf file:
-
 ```
 sudo nano /etc/wsl.conf
 ```
@@ -227,4 +228,14 @@ sudo nano /etc/wsl.conf
 options="metadata,umask=0033"
 ```
 
+# Windows Terminal
 
+- Change the 'defaultProfile' settings to the guid of the terminal you want as default
+- Set your home directory as the start directory for the WSL terminal
+```
+"startingDirectory": "/\\wsl$/\\Ubuntu/\\home/\\[yourusername]"
+```
+
+# Visual Studio Code
+
+- Install the Remote - WSL extensioncode
