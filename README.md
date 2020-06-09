@@ -117,7 +117,7 @@ sudo -S apt-mark hold procps strace sudo
 sudo -S env RELEASE_UPGRADER_NO_SCREEN=1 do-release-upgrade
 ```
 
-# Install PHP, Composer, Node, Yarn and Vagrant
+# Install PHP, Composer, NVM, Node, Yarn, Typescript and Vagrant
 
 - PHP Installation
 
@@ -175,6 +175,11 @@ vagrant box add laravel/homestead
 git clone https://github.com/laravel/homestead.git /mnt/c/Users/[yourusername]/Homestead
 cd /mnt/c/Users/[yourusername]/Homestead
 bash init.sh
+```
+
+- Typescript
+```
+npm install -g typescript
 ```
 
 - Append to the Vagrantfile file in the Homestead folder, inside Vagrant.configure
