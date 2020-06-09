@@ -57,9 +57,6 @@ export PATH="$PATH:/mnt/c/Program Files/Oracle/VirtualBox"
 export PATH=$PATH:~/.config/composer/vendor/bin
 export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS="1"
 
-alias ll='ls -alFh'
-alias code='cd /mnt/c/Users/marce/Documents/code'
-
 ZSH_THEME="spaceship"
 SPACESHIP_PROMPT_ORDER=(
   user          # Username section  
@@ -91,6 +88,9 @@ function homestead() {
 }
 
 source $ZSH/oh-my-zsh.sh
+
+alias ll='ls -alFh'
+alias code='cd /mnt/c/Users/marce/Documents/code'
 ```
 
 - Download the Fira Code fonts at https://github.com/tonsky/FiraCode. Unzip and double click the TTF to install.
