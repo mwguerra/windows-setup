@@ -117,18 +117,18 @@ sudo -S apt-mark hold procps strace sudo
 sudo -S env RELEASE_UPGRADER_NO_SCREEN=1 do-release-upgrade
 ```
 
-# Install PHP, Composer, NVM, Node, Yarn, Typescript and Vagrant
+# Install PHP, MySQL, Composer, NVM, Node, Yarn, Typescript and Vagrant
 
-- PHP Installation
+- PHP & MySQL Installation
 ```
 sudo apt-get update
 sudo apt -y install software-properties-common
 sudo add-apt-repository ppa:ondrej/php
 sudo apt-get update
-sudo apt -y install php7.4
-sudo apt-get install -y php7.4-{bcmath,bz2,intl,gd,mbstring,mysql,zip,dom}
-sudo apt-get install -y php7.4-dom
-sudo apt-get install -y php-{redis,xdebug}
+sudo apt install -y php7.4
+sudo apt install -y php7.4-{bcmath,bz2,intl,gd,mbstring,mysql,zip,dom}
+sudo apt install -y php-{redis,xdebug,mysql}
+sudo apt install -y mysql-server
 php -m
 ```
 
