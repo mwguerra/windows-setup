@@ -199,6 +199,11 @@ homestead up
 ssh-keygen -o
 ```
 
+- Install zsh-autosuggestions
+```
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+```
+
 - Add zsh-autosuggestions and ssh-agent plugins to the .zshrc file
 ```
 plugins=(git ssh-agent zsh-autosuggestions)
